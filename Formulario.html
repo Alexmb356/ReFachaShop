@@ -5,12 +5,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="icon" href="./Imagenes/RFS.ico" />
+        <link rel="icon" href="./static/Imagenes/RFS.ico" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>ReFachaShop</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./CSS/style.css">
+        <link rel="stylesheet" href="./static/CSS/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
     <body>
@@ -21,7 +21,7 @@
                 <div class="container-fluid" id="navbar1">
                     <div class="d-flex align-items-center">
                         <a class="navbar-brand" href="#">
-                            <img src="Imagenes/ReFachaShop.png" alt="" width="48" height="48" class="d-inline-block align-text-top">
+                            <img src="./static/Imagenes/ReFachaShop.png" alt="" width="48" height="48" class="d-inline-block align-text-top">
                             <a class="navbar-brand colorTituloLogo" href="./Index.html">ReFachaShop</a>
                         </a>
                     </div>
@@ -54,87 +54,134 @@
 
     
         <main>
-           
-        <form onsubmit="return validarFormulario()" >
-            <h1 style="text-align: center;">Formulario de Registro</h1>
-            <div class="form-container">
+         <section>
 
-                <div class="formulario">
+            <h1 style="text-align: center;">Formulario de Registro</h1>
+            <form id="formRegister" action="#" >
+                <div class="form-container">
     
-                    <div>
-                        <div >
-                            <label for="nombre">Nombre:</label><br>
-                            <input class="form-control" type="text"id="nombre" name="nombre" required>
-                      
+                    <div class="formulario">
         
-                        </div>
-                       
-                    </div>
-                    <div>
                         <div>
-                            
-                            <label for="apellido">Apellido:</label><br>
-                            <input class="form-control" type="text" id="apellido" name="apellido" required>
+                           
+                            <div  >
+                                <label for="nombre">Nombre:</label><br>
+                                <input class="form-control"  type="text" id="nombre" name="nombre">
+                          
+            
+                            </div>
+                            <div class="error" id="error-firstname"></div>
+                           
                         </div>
-        
-        
-                    </div>
-                    <div>
-        
-                        <label for="email">Email:</label> <br>
-                        <input class="form-control" type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="edad">Edad:</label> <br>
-                        <input class="form-control" type="text" id="edad" name="edad" required>
-        
-                    </div>
-                    <div>
-                        <label for="pais">País:</label> <br>
-                        <input class="form-control" type="text" id="pais" name="pais" required>
-        
-                    </div>
-                
-                    <div>
-                        <label for="ciudad">Ciudad:</label> <br>
-                        <input class="form-control" type="text" id="ciudad" name="ciudad" required>
-        
-                    </div>
+                        <div>
+                            <div>
+                                
+                                <label for="apellido">Apellido:</label><br>
+                                <input class="form-control" type="text" id="apellido" name="apellido" >
+                            </div>
+                            <div class="error" id="error-lastname"></div>
+            
+            
+                        </div>
+                        <div>
+                            <div>
+
+                                <label for="email">Email:</label> <br>
+                                <input class="form-control" type="email" id="email" name="email" >
+                            </div>
+            
+                            <div class="error" id="error-email"></div>
+                        </div>
+                        <div>
+                            <div>
+
+                                <label for="edad">Edad:</label> <br>
+                                <input class="form-control" type="text" id="edad" name="edad">
+                            </div>
+                            <div class="error" id="error-edad"></div>
+            
+                        </div>
+                        <div>
+                            <div>
+
+                                <label for="pais">País:</label> <br>
+                                <select name="pais" id="pais" class="form-select">
+                                    <option value="">País</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="BO">Bolivia</option>
+                                    <option value="BR">Brasil</option>
+                                    <option value="CH">Chile</option>
+                                    <option value="CO">Colombia</option>
+                                    <option value="EC">Ecuador</option>
+                                    <option value="PY">Paraguay</option>
+                                    <option value="PE">Perú</option>
+                                    <option value="UY">Uruguay</option>
+                                    <option value="VE">Venezuela</option>
+                                </select>
+                                
+                            </div>
+                            <div class="error" id="error-pais"></div>
+            
+                        </div>
                     
-                    <div>
-        
-                        <label for="domicilio">Domicilio:</label> <br>
-                        <input class="form-control" type="text" id="domicilio" name="domicilio" required>
-                    </div>
-        
-                    <div>
-        
-                        <label for="codigoPostal">Código Postal:</label> <br>
-                        <input class="form-control" type="text" id="codigoPostal" name="codigoPostal" required>
-                    </div>
-                    
-                    <div>
-        
-                        <label for="contrasena">Contraseña:</label> <br>
-                        <input class="form-control" type="password" id="contrasena" name="contrasena" required>
-                    </div>
-        
-                    <div>
-                        <label for="repetirContrasena">Repetir Contraseña:</label> <br>
-                        <input class="form-control" type="password" id="repetirContrasena" name="repetirContrasena" required>
-        
+                        <div>
+                            <div>
+
+                                <label for="ciudad">Ciudad:</label> <br>
+                                <input class="form-control" type="text" id="ciudad" name="ciudad">
+                            </div>
+                            <div class="error" id="error-ciudad"></div>
+            
+                        </div>
+                        
+                        <div>
+                            <div>
+
+                                <label for="domicilio">Domicilio:</label> <br>
+                                <input class="form-control" type="text" id="domicilio" name="domicilio" >
+                            </div>
+                            <div class="error" id="error-domicilio"></div>
+                        </div>
+            
+                        <div>
+                            <div>
+
+                                <label for="codigoPostal">Código Postal:</label> <br>
+                                <input class="form-control" type="text" id="codigoPostal" name="codigoPostal" >
+                            </div>
+                            <div class="error" id="error-codigopostal"></div>
+                        </div>
+                        
+                        <div>
+                            <div>
+
+                                <label for="contrasena">Contraseña:</label> <br>
+                                <input class="form-control" type="password" id="contrasena" name="contrasena" >
+                            </div>
+                            <div class="error" id="error-contrasena"></div>
+                        </div>
+            
+                        <div>
+                            <div>
+
+                                <label for="repetirContrasena">Repetir Contraseña:</label> <br>
+                                <input class="form-control" type="password" id="repetirContrasena" name="repetirContrasena" >
+                            </div>
+                            <div class="error" id="error-repetirContrasena"></div>
+            
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="boton-registrar" >
-                <input type="submit" value="Registrarse">
-
-            </div>
-          
-            
-        </form>
+                <div class="boton-registrar" >
+                    <input type="submit" value="Registrarse">
+    
+                </div>
+              
+                
+            </form>
+         </section>  
         
-            </main>
+        </main>
     
         <footer className="footer" id="footer">
 
@@ -168,7 +215,7 @@
             
             <div className="d-flex justify-content-center align-items-center mb-3">
                 <a href="/">
-                    <img alt="Icono ReFachaShop" src="./Imagenes/ReFachaShop.png" width="10%" className="svg-icon" />
+                    <img alt="Icono ReFachaShop" src="./static/Imagenes/ReFachaShop.png" width="10%" className="svg-icon" />
                     
                 </a>
                 <p className="mt-4">ReFachaShop - Todos los Derechos Reservados &copy;</p>
@@ -179,6 +226,6 @@
 
         </footer>
         
-        <script src="./formulario.js" ></script>
+        <script src="./static/js/formulario.js" ></script>
     </body>
 </html>
