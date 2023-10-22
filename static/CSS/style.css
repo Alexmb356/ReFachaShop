@@ -240,8 +240,42 @@ form{
       margin: 10px 0;
   }
 
+  #productos {
+    
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    
+   
+    
+  }
+
+  #banner-card{
+    
+    margin: 5% 1% 1% 30%;
+    
+  }
+
+  .formulario{
+    
+    grid-template-columns: 1fr;
+  
+  }
+  
+  .formContacto-container{
+   
+    grid-template-columns: 1fr;
+   
+  }
+
+  #mapa{
+    width:100%;
+    height:100%;
+    
+  }
+
  
 }
+
+
 
 @media screen and (min-width:768px) and (max-width:1200px){
   #banner{
@@ -275,7 +309,19 @@ form{
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
+  #banner{
+    
+    height: 30vh;
+    width: 100%;
+    
+    
+  }
+  
+ 
+}
+
+@media screen and (min-width:450px) and (max-width:768px){
   #banner{
     
     height: 50vh;
@@ -283,37 +329,4 @@ form{
     
     
   }
-  
-  #productos {
-    
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    
-   
-    
-  }
-
-  #banner-card{
-    
-    margin: 5% 1% 1% 30%;
-    
-  }
-
-  .formulario{
-    
-    grid-template-columns: 1fr;
-  
-  }
-  
-  .formContacto-container{
-   
-    grid-template-columns: 1fr;
-   
-  }
-
-  #mapa{
-    width:100%;
-    height:100%;
-    
-  }
 }
-
