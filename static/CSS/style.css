@@ -18,7 +18,9 @@
 body {
 	font-family: 'Montserrat', sans-serif;
 	background: var(--bg-color);
-	color: #1d1d1d;
+	height: 100%;
+  margin: 0;
+	padding: 0;
 }
 
 a{
@@ -110,7 +112,7 @@ form{
   margin-bottom: 5px;
 }
 
-.input-error, .form-select.error {
+.input-error, .form-select.error, .textarea.error {
   border: 2px solid red !important;
 }
 
@@ -168,4 +170,138 @@ form{
 #footer{
     background:var(--bgfooter-color) ;
     text-align: center;
+    padding: 5px;
 }
+
+
+/* Estilos del menú hamburguesa */
+.navbar {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 3px 0;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Mostrar el menú en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+      display: flex;
+      
+  }
+
+  .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      position:fixed;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      padding: 10px 20px;
+  }
+
+  .menu.active {
+    display: flex;
+   
+  }
+
+  .menu li {
+      margin: 10px 0;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1200px){
+  #banner{
+    
+    height: 40vh;
+    width: 100%;
+    
+    
+  }
+  
+  #productos {
+    
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    
+  }
+
+  #banner-card{
+    margin: 5% 1% 1% 50%;
+  }
+
+  .formContacto-container{
+   
+    grid-template-columns: 1fr;
+   
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #banner{
+    
+    height: 30vh;
+    width: 100%;
+    
+    
+  }
+  
+  #productos {
+    
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    
+   
+    
+  }
+
+  #banner-card{
+    
+    margin: 5% 1% 1% 30%;
+    
+  }
+
+  .formulario{
+    
+    grid-template-columns: 1fr;
+  
+  }
+  
+  .formContacto-container{
+   
+    grid-template-columns: 1fr;
+   
+  }
+}
+

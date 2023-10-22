@@ -8,10 +8,9 @@ const validarFormulario =(e) => {
     const pais = document.getElementById('pais').value
     const ciudad = document.getElementById('ciudad').value;
     const domicilio = document.getElementById('domicilio').value;
-    console.log(domicilio);
     const codigoPostal = document.getElementById('codigoPostal').value;
     const contrasena = document.getElementById('contrasena').value;
-    console.log(contrasena);
+    console.log("Este es el:",pais);
     const repetirContrasena = document.getElementById('repetirContrasena').value;
 
     //const nombre = document.querySelector('#nombre');
@@ -41,24 +40,7 @@ const validarFormulario =(e) => {
     // Expresión regular para validar la contraseña (al menos 8 caracteres)
     const contrasenaRegex = /^.{6,}$/;
 
-    // Validar que todos los campos estén completos
-    /*if (nombre === "" || apellido === "" || email === "" || edad === "" || pais === "" || ciudad === "" || domicilio === "" || codigoPostal === "" || contrasena === "" || repetirContrasena === "") {
-        const formRegister = document.querySelector('#formRegister');
-        const pElement = document.querySelector('p'); // Selecciona el primer elemento <p> encontrado
-        if (pElement) {
-            pElement.remove(); // Elimina el elemento <p> del DOM
-          }
-
-        const p = document.createElement('p');
-        console.log(p);
-        p.innerHTML = '<b>No te olvides de completar todos los datos del formulario</b>';
-        formRegister.appendChild(p)
-        
-        
-       
-       e.preventDefault();
-        return false
-    }*/
+    //Validaciones
 
     if (!nombreRegex.test(nombre)) {
         const errorNombre = document.getElementById('error-firstname');
@@ -91,10 +73,10 @@ const validarFormulario =(e) => {
        
     }
 
-    if (pais === "País"){
+    if (pais === ""){
         const errorPais = document.getElementById('error-pais');
         document.getElementById('pais').classList.add('input-error');
-        errorPais.textContent = "Por favor, selecciona un país válido.";
+        errorPais.textContent = "Por favor, selecciona un país.";
         e.preventDefault();
        
     }
@@ -147,3 +129,12 @@ const validarFormulario =(e) => {
 
 formRegister.addEventListener('submit', validarFormulario)
 
+//Menu Hamburguesa
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+
+    menuToggle.addEventListener('click', function () {
+        menu.classList.toggle('active');
+    });
+});
