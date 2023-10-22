@@ -246,7 +246,7 @@ form{
 @media screen and (min-width:768px) and (max-width:1200px){
   #banner{
     
-    height: 40vh;
+    height: 50vh;
     width: 100%;
     
     
@@ -278,7 +278,7 @@ form{
 @media screen and (max-width: 768px) {
   #banner{
     
-    height: 30vh;
+    height: 40vh;
     width: 100%;
     
     
