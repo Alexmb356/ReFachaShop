@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-const validarFormContacto =(e) => {
+
+const $form = document.querySelector('#formContacto')
+async function validarFormContacto (e) {
     
     const nombre = document.getElementById('nombre').value;
     const apellido = document.getElementById('apellido').value;
@@ -65,8 +67,37 @@ const validarFormContacto =(e) => {
   
     }
 
+    
+    e.preventDefault();
+    const form  = new FormData (this)
+    const response = await fetch (this.action, {
+        method: this.method ,
+        body :form,
+        headers: {
+            'Accept': 'application/json'
+        }
+    } )
+    if (response.ok) {
+        this.reset()
+        alert ('Su mensaje fue enviado, pronto lo contactaremos')
+        document.getElementById('nombre').classList.remove('input-error');
+        document.getElementById('apellido').classList.remove('input-error');
+        document.getElementById('email').classList.remove('input-error');
+        document.getElementById('message').classList.remove('textarea-error');
+        document.getElementById('error-firstname').textContent= '';
+        document.getElementById('error-lastname').textContent= '';
+        document.getElementById('error-email').textContent= '';
+        document.getElementById('error-message').textContent= '';
+        
+        
+    }
+
+    
+   
+    
+
 
     return true;
 }
 
-formContacto.addEventListener('submit', validarFormContacto)
+$form.addEventListener('submit', validarFormContacto)
