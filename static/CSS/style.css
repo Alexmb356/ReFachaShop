@@ -17,7 +17,7 @@
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 	background: var(--bg-color);
 	height: 100%;
   margin: 0;
@@ -116,7 +116,7 @@ form{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #mapa{
@@ -273,6 +273,20 @@ form{
   }
 
  
+}
+
+.titleQuienessomos{
+  color: var(--navbar-color);
+  justify-content: center;
+  text-align: center;
+}
+
+.contenidoPrincipal{
+  color: var(--navbar-color);
+  justify-content: center;
+  text-align: center;
+  margin: 5%;
+  
 }
 
 
