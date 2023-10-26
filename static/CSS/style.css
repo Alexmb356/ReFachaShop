@@ -213,6 +213,40 @@ form{
   font-size: 16px;
 }
 
+/*Estilo Quienes somos*/
+.titleQuienessomos{
+  color: var(--navbar-color);
+  justify-content: center;
+  text-align: center;
+}
+
+.contenidoPrincipal{
+  color: var(--navbar-color);
+  justify-content: center;
+  text-align: center;
+  margin: 3%;
+  
+}
+
+
+/*Animación*/
+@keyframes fade {
+  0% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.content {
+  
+  animation: fade 3s linear infinite;
+}
+
 /* Mostrar el menú en pantallas pequeñas */
 @media screen and (max-width: 768px) {
   .menu-toggle {
@@ -274,21 +308,6 @@ form{
 
  
 }
-
-.titleQuienessomos{
-  color: var(--navbar-color);
-  justify-content: center;
-  text-align: center;
-}
-
-.contenidoPrincipal{
-  color: var(--navbar-color);
-  justify-content: center;
-  text-align: center;
-  margin: 5%;
-  
-}
-
 
 
 @media screen and (min-width:768px) and (max-width:1200px){
