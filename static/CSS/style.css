@@ -151,6 +151,16 @@ form{
   cursor: pointer;
 }
 
+#btn-add-users {
+  background:var(--buton-color);
+  color:var(--text-color);
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
 .boton-registrar {
   display: flex;
   justify-content: center; /* Esto centrará el botón horizontalmente */
@@ -225,6 +235,14 @@ form{
   justify-content: center;
   text-align: center;
   margin: 3%;
+  
+}
+
+.icono_p {
+  background-color: var(--primary-color);
+  padding: 10px;
+  border-radius: 10px;
+  
   
 }
 

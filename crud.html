@@ -48,12 +48,10 @@
 
     
         <main>
-         <section>
-
-            <h1 style="text-align: center;">Formulario de Registro</h1>
-            <form id="formRegister" action="#" >
-                <div class="form-container">
-    
+            
+            <section id="form" >
+                <h1 style="text-align: center;">Formulario de Registro</h1>        
+                <form action="" enctype="multipart/form-data" id="form-users">
                     <div class="formulario">
         
                         <div>
@@ -164,17 +162,50 @@
                             <div class="error" id="error-repetirContrasena"></div>
             
                         </div>
+                            <div class="form-control d-flex-column">
+                                <label for="">avatar</label>
+                                <input type="file" class="input-search" name="avatar" id="avatar-form">
+                            </div>
+                            <input type="hidden" class="" name="id" id="id_user">
+                            <button class="boton-registrar"  type="button" id="btn-add-users">Registrar</button>
+                        </div>
+                        
                     </div>
-                </div>
-                <div class="boton-registrar" >
-                    <input type="submit" value="Registrarse">
+                </form>
+            </section>
+            <section id="list" class="container">
+                <h2 class="search-title" style="text-align: center;">Listado de usuarios</h2>
+                <br>
+                <table id="list-table-users" class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                            <th>Edad</th>
+                            <th>País</th>
+                            <th>Ciudad</th>
+                            <th>Domicilio</th>
+                            <th>CP</th>
+                            <th>Contraseña</th>
+                            <th>Avatar</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>                    
+                    </tbody>
+                </table>
+                <br>
+                <br>
+                <br>
+                <div id="list-div-users">
     
                 </div>
-              
-                
-            </form>
-         </section>  
-        
+            </section>
+    
+
+
+
         </main>
     
         <footer className="footer" id="footer">
@@ -219,7 +250,9 @@
             
 
         </footer>
-        
+        <script src="./static/js/index.js"></script>
         <script src="./static/js/formulario.js" ></script>
+        <script src="./static/js/crudUsers.js"></script>
+        
     </body>
 </html>
