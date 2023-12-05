@@ -18,9 +18,11 @@ async function fetchData() {
         <div class="imageProduct">
           <img src="${producto.image}" alt="${producto.title}" style="height:100px" >
         </div>
+        <div class="infoProduct">
+          <h5>${producto.title}</h5>
+          <p>Precio: $${producto.price}</p>
         
-        <h5>${producto.title}</h5>
-        <p>Precio: $${producto.price}</p>
+        </div>
       `;
       productosDiv.appendChild(productoElement);
     });
