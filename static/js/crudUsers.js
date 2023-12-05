@@ -1,5 +1,8 @@
 const API_SERVER = 'http://127.0.0.1:8000';
 
+let formHiddenElement = document.querySelector('.formhidden');
+
+
 // Función para realizar la petición fetch
 async function fetchData(url, method, data = null) {
     const options = {
@@ -22,6 +25,10 @@ async function fetchDataWithFile(url, method, formData) {
 
     const response = await fetch(url, options);
     return await response.json();
+}
+
+function addUser() {
+    formHiddenElement.style.display = 'block';
 }
 
 document.getElementById('btn-add-users').addEventListener('click', async function () {
@@ -69,6 +76,8 @@ document.getElementById('btn-add-users').addEventListener('click', async functio
     idUser.value=''
     formUsers.reset();
     alert(result.message);
+
+    formHiddenElement.style.display = 'none';
 
     showUsersTable();
 });
@@ -127,6 +136,7 @@ async function deleteUser(id){
 */
   
 async function updateUser(id){
+    
     let response = await fetchData(`${API_SERVER}/api/detail_user/${id}/`, 'GET');
     const idUser = document.querySelector('#id_user');
     const nombre = document.querySelector('#nombre');
@@ -149,6 +159,11 @@ async function updateUser(id){
     domicilio.value = response.domicilio;
     codigoPostal.value = response.codigoPostal;
     contrasena.value = response.contrasena;
+
+    
+    formHiddenElement.style.display = 'block';
 }
+
+
 
 showUsersTable();

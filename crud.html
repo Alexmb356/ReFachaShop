@@ -49,7 +49,7 @@
     
         <main>
             
-            <section id="form" >
+            <section class="formhidden" id="form" >
                 <h1 style="text-align: center;">Formulario de Registro</h1>        
                 <form action="" enctype="multipart/form-data" id="form-users">
                     <div class="formulario">
@@ -172,6 +172,9 @@
             <section id="list" class="container">
                 <h2 class="search-title" style="text-align: center;">Listado de usuarios</h2>
                 <br>
+                <a>
+                    <button  onclick="addUser()" class="btn btn-primary mb-3">Crear Usuario</button>
+                </a>
                 <table id="list-table-users" class="table">
                     <thead>
                         <tr>
