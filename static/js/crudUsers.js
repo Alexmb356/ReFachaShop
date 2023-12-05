@@ -40,6 +40,9 @@ document.getElementById('btn-add-users').addEventListener('click', async functio
     console.log("email",email)
     console.log("edad",edad)
     console.log("pais",pais)
+    console.log("ciudad",ciudad)
+    console.log("domicilio",domicilio)
+    console.log("contrasena",contrasena)
     //manejo de archivos
     const avatarFileInput = document.querySelector('#avatar-form');
     const avatar = avatarFileInput.files[0];
@@ -96,9 +99,9 @@ async function showUsersTable(){
                         <img src="${API_SERVER+user.avatar}" width="30%">
                     </td>
                     <td>
-                        <button class="icono_p" onclick='updateuser(${user.id})'><i class="fa fa-pen" ></i></button></i>
+                        <button class="icono_p" onclick='updateUser(${user.id})'><i class="fa fa-pen" ></i></button></i>
                         
-                        <button class="icono_p" onclick='deleteuser(${user.id})'><i class="fa fa-trash" ></button></i>
+                        <button class="icono_p" onclick='deleteUser(${user.id})'><i class="fa fa-trash" ></button></i>
                     </td>
                   </tr>`;
       tableUsers.insertAdjacentHTML("beforeend",tr);
@@ -124,17 +127,17 @@ async function deleteUser(id){
 */
   
 async function updateUser(id){
-    let response = await fetchData(`${API_SERVER}/api/update_user/${id}/`, 'GET');
+    let response = await fetchData(`${API_SERVER}/api/detail_user/${id}/`, 'GET');
     const idUser = document.querySelector('#id_user');
-    const nombre = document.querySelector('#nombre').value;
-    const apellido = document.querySelector('#apellido').value;
-    const email = document.querySelector('#email').value;
-    const edad = document.querySelector('#edad').value;
-    const pais = document.querySelector('#pais').value;
-    const ciudad = document.querySelector('#ciudad').value;
-    const domicilio = document.querySelector('#domicilio').value;
-    const codigoPostal = document.querySelector('#codigoPostal').value;
-    const contrasena = document.querySelector('#contrasena').value;
+    const nombre = document.querySelector('#nombre');
+    const apellido = document.querySelector('#apellido');
+    const email = document.querySelector('#email');
+    const edad = document.querySelector('#edad');
+    const pais = document.querySelector('#pais');
+    const ciudad = document.querySelector('#ciudad');
+    const domicilio = document.querySelector('#domicilio');
+    const codigoPostal = document.querySelector('#codigoPostal');
+    const contrasena = document.querySelector('#contrasena');
     
     idUser.value = response.id;
     nombre.value = response.nombre;
